@@ -1,0 +1,18 @@
+spring:
+  profiles.active: mu
+
+---
+spring:
+  profiles: mu
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 172.16.0.29
+    port: 5672
+    listener:
+      retry:
+        enabled: true
+        initial-interval: 2000
+        max-attempts: 2
+        multiplier: 1.5
+        max-interval: 5000
